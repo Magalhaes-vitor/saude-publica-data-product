@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  saude-publica-data-product — pipeline serverless de reconciliacao de
+  gasto, capacidade instalada e (Fase 2) preco de medicamentos no SUS.
+
+Resources:
+  PipelineFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      MemorySize: 1024
+      Timeout: 300
+      Environment:
+        Variables:
+          DATA_LAKE_BUCKET: !Ref DataLakeBucket
+          SLACK_WEBHOOK_URL: "" # preencher via parametro/secret, nao commitar valor real
+      Events:
+        ScheduledRun:
+          Type: Schedule
+          Properties:
+            # SIOPS e bimestral - ajustar cron apos confirmar cadencia real no spike
+            Schedule: "rate(30 days)"
+    Metadata:
+      DockerTag: latest
+      DockerContext: .
+      Dockerfile: Dockerfile
+
+  DataLakeBucket:
+    Type: AWS::S3::Bucket
