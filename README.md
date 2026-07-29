@@ -250,7 +250,7 @@ Um terceiro spike decide o go/no-go da Fase 2 (cobertura do de-para BPS × CMED)
 | 1 — Spikes (CNES, SIOPS) | Pendente |
 | 2 — Contratos de dados + extração (Fase 1) | Não iniciada |
 | 3 — Silver + Gold (Fase 1) | Não iniciada |
-| 4 — Athena + Power BI (Fase 1) | Não iniciada — primeiro marco publicável |
+| 4 — Athena + Power BI (Fase 1) | Não iniciada |
 | 5 — Decisão go/no-go Fase 2 (spike BPS) | Não iniciada |
 | 6 — Extração + de-para BPS × CMED (se for go) | Condicional |
 | 7 — Agente Bedrock | Não iniciada |
